@@ -34,14 +34,6 @@ async function handleEvent(event) {
     return Promise.resolve(null);
   }
 
-  // let replyText = '';
-  // if (event.message.text === 'こんにちは') {
-  //   replyText = 'こんばんわの時間ですよ';
-  // } else {
-  //   replyText = 'うざ';
-  // }
-
-
 
   if (event.message.text === '阿蘇') {
     await client.pushMessage(event.source.userId, {
@@ -58,11 +50,88 @@ async function handleEvent(event) {
     }) //テキスト
   }
 
+  if (event.message.text === 'ベジータ') {
+    await client.pushMessage(event.source.userId, {
+      type: 'image',
+      originalContentUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115143.jpg',
+      previewImageUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115143.jpg',
+    }); //画像
+
+    return client.replyMessage(event.replyToken, {
+      type: 'text',
+      text: 'ピース',
+    }) //テキスト
+  }
+
+  if (event.message.text === 'ハッピーバースデー') {
+    await client.pushMessage(event.source.userId, {
+      type: 'image',
+      originalContentUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115150.jpg',
+      previewImageUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115150.jpg',
+    }); //画像
+
+    return client.replyMessage(event.replyToken, {
+      type: 'text',
+      text: '誕生日やね',
+    }) //テキスト
+  }
+
+  if (event.message.text === 'ナイスアズパイ') {
+    await client.pushMessage(event.source.userId, {
+      type: 'image',
+      originalContentUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115253.jpg',
+      previewImageUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115253.jpg',
+    }); //画像
+
+    return client.replyMessage(event.replyToken, {
+      type: 'text',
+      text: 'NICE AS PIE!!',
+    }) //テキスト
+  }
+
+
+  if (event.message.text === 'うんこ') {
+    await client.pushMessage(event.source.userId, {
+      type: 'image',
+      originalContentUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115225.jpg',
+      previewImageUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115225.jpg',
+    })
+    await client.pushMessage(event.source.userId, {
+      type: 'image',
+      originalContentUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115221.jpg',
+      previewImageUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115221.jpg',
+    })
+    await client.pushMessage(event.source.userId, {
+      type: 'image',
+      originalContentUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115217.jpg',
+      previewImageUrl:
+        'https://cdn-ak.f.st-hatena.com/images/fotolife/b/benbeckman/20200816/20200816115217.jpg',
+    });
+    return
+  }
+
+  if (event.message.text.match('？')) {
+    return client.replyMessage(event.replyToken, {
+      type: 'text',
+      text: 'おけおけ，それでよいかと．',
+    }) //テキスト
+
+  }
   return client.replyMessage(event.replyToken, {
     type: 'text',
     text: event.message.text + 'ね'
   })
-
 
 }
 
